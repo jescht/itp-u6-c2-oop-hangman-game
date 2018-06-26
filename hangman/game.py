@@ -3,7 +3,7 @@ import random
 
 class GuessAttempt(object):
     
-    def __init__(self,character, hit=False, miss=False):
+    def __init__(self, character, hit=False, miss=False):
         self.character = character
         self.miss = miss
         self.hit = hit
@@ -50,6 +50,9 @@ class GuessWord(object):
                 
         
         if character in self.answer:
+            '''Checks if user's guess matches any of the characters in answer word(string) by index. 
+            If there's a match, it is added to the string masked_word at the same index. Else it adds characters from self.masked.
+            Finally, it assigns the new masked_word to self.masked.'''
             masked_word = ''
             for index in range(0, len(self.answer)):
                 if  character == self.answer[index]:
